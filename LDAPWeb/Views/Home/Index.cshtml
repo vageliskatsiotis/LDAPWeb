@@ -1,0 +1,49 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+<link href="~/Content/Site.css" rel="stylesheet" />
+<div class="row">
+    <div class="col-md-8">
+        <section>
+            @using (Html.BeginForm("ChangeUserPass", "Home", new { @class = "form-horizontal" }))
+            {
+                <h4>Change Password</h4>
+                <hr />
+                <div class="form-group">
+                    <label asp-for="UserName" class="col-md-4 control-label ptop5"><span class="text-danger">* </span>User Name :</label>
+                    <div class="col-md-8">
+                        <input id="User" type="text" name="UserName" class="form-control" placeholder="User Name" required  />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label asp-for="OldPassword" class="col-md-4 control-label ptop15"><span class="text-danger">* </span>Old Password :</label>
+                    <div class="col-md-8 top10">
+                        <input id="OldPass" type="password" name="OldPassword" class="form-control" placeholder="Old Password" required />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label asp-for="PassWord" class="col-md-4 control-label ptop15"><span class="text-danger">* </span>New Password :</label>
+                    <div class="col-md-8 top10">
+                        <input id="Pass" type="password" name="PassWord" class="form-control" placeholder="New Password" required />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label asp-for="RPassWord" class="col-md-4 control-label ptop15"><span class="text-danger">* </span>Retype New Password :</label>
+                    <div class="col-md-8 top10">
+                        <input id="RPass" type="password" name="RPassWord" class="form-control" placeholder="Confirm" required />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-4"></div>
+                    <div class="col-md-4 top10">
+                        <button type="submit" class="btn btn-default top10">Submit</button>
+                    </div>
+                    <div class="col-md-4"></div>
+                </div>
+            }
+            @Html.Raw(TempData["msg"])
+        </section>
+    </div>
+</div>
+
+
