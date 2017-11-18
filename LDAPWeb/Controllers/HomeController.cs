@@ -81,7 +81,7 @@ namespace LDAPWeb.Controllers
 
                 else
                 {
-                    TempData["msg"] = "<script>alert('Could not authenticate user');</script>";
+                    TempData["msg"] = "<script>alert('Could not authenticate user!');</script>";
                     Thread.Sleep(2000);
                     return View("Index");
                 }
